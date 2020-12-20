@@ -49,14 +49,19 @@ We define the crf parameter to 26 in order to achieve a enough good quality. The
 ## Exercice 2
 In this exercice our goal is create a new video as the one of the 4 videos at the same time. 
 
-As we had mentioned above, for each video we create a given folder to save its new formats. In this exercice the user is able to choose which folder (with its respective four videos) wants to use. The obtained multiple video looks as:
+As we had mentioned above, for each video we create a given folder to save its new formats. In this exercice the user is able to choose which folder (with its respective four videos) wants to use. 
+
+The obtained multiple video in 480 resolution looks as:
 <p align="center">
   <img src="Screenshoots/multiple480.png" width="850">
 </p>
+As we can see the avi is the worst quality container, we can see at the edges of the cartoons the loss of quality. If we consider the edges as a measure of quality the order would by AVI,VP8,H265,VP9 in terms of worsto to better quality.
+The next example is with the 720p video resolution:
 <p align="center">
   <img src="Screenshoots/multiple720.png" width="850">
 </p>
-Regarding the bitrate, the order is [0][0]AVI [0][1]VP9 [1][0]VP8 [1][1]H265, 
+In this case the loss of quality is not as noticeable as in the previous case, the worst perceptually container is VP8.
+We have dedduced that the order is the follwing [0][0]AVI [0][1]VP9 [1][0]VP8 [1][1]H265. Notices that worst quality means less bitrate.
 
 ## Exercice 3
 In this exercice our goal is stream a video. In order to do that we have created the stream.py script that get the cut_BBB video(one minute fragment of BBB video), to stream it we need to broadcast the video into a IP adress, the used command is the following:
